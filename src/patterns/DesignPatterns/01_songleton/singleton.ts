@@ -1,3 +1,15 @@
+export default function Singleton() {
+  const counter1 = new Counter()
+  const counter2 = new Counter()
+
+  console.log('Singleton -> counter1.getCount()', counter1.getCount())
+
+  counter2.increaseCount()
+  counter1.increaseCount()
+
+  console.log('Singleton -> counter2.getCount()', counter2.getCount())
+}
+
 interface ICounter {
   count: number
   getCount: () => number
@@ -20,15 +32,4 @@ class Counter implements ICounter {
   increaseCount() {
     return this.count++
   }
-}
-export default function Singleton() {
-  const counter1 = new Counter()
-  const counter2 = new Counter()
-
-  console.log('Singleton -> counter1.getCount()', counter1.getCount())
-
-  counter2.increaseCount()
-  counter1.increaseCount()
-
-  console.log('Singleton -> counter2.getCount()', counter2.getCount())
 }

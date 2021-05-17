@@ -1,3 +1,3 @@
-import singleton from './01_songleton/singleton'
+import designPatterns from './DesignPatterns'
 
-export default [singleton]
+export default [...designPatterns]
